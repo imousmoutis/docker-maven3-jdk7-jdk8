@@ -15,6 +15,11 @@ RUN apt-get -y install openjdk-7-jdk
 RUN update-java-alternatives -s java-1.7.0-openjdk-amd64
 
 RUN apt-get -y install maven && \
-	apt-get -y install git
+	apt-get -y install git 
+
+RUN apt-get -y install curl && \
+	curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+	apt-get -y install nodejs && \
+	ln -s "$(which nodejs)" /usr/local/bin/node
 
 CMD ["bash"]
