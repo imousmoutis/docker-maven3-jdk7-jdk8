@@ -15,7 +15,8 @@ RUN apt-get -y install openjdk-7-jdk
 RUN update-java-alternatives -s java-1.7.0-openjdk-amd64
 
 RUN apt-get -y install maven && \
-	apt-get -y install git 
+	apt-get -y install git && \
+	apt-get -y install unzip 
 
 RUN apt-get -y install curl && \
 	curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
